@@ -21,6 +21,7 @@ branches:
 #mvn -q	| --quiet 控制Maven的日志级别,仅仅显示错误;
 #mvn -Pxxx 	激活 id 为 xxx的profile (如有多个，用逗号隔开);zcgtravis
 after_success:
+  - mvn jacoco:report
   - mvn coveralls:report -DrepoToken="${COVERALLS_TOKEN}"
 
 env:
