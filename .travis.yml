@@ -11,10 +11,12 @@ jobs:
   include:
   - stage: test
     jdk: oraclejdk8
-    script: mvn -q verify -Pcheck-semantic-version  #跳过测试，但编译测试代码 -q控制日志级别
+    script: mvn -q -v
     env: CHECK_SEMANTIC_VERSION=true
 
 branches:
   only:
   - master
 #-DskipTests=true
+#mvn -q	| --quiet 控制Maven的日志级别,仅仅显示错误;
+#mvn -Pxxx 	激活 id 为 xxx的profile (如有多个，用逗号隔开);
