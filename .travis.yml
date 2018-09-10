@@ -1,0 +1,19 @@
+language: java
+sudo: false
+
+cache:
+  directories:
+  - "$HOME/.m2"
+before_cache:
+- rm -rf $HOME/.m2/repository/net/lobster
+
+jobs:
+  include:
+  - stage: test
+    jdk: oraclejdk8
+    script: mvn -q verify -Pcheck-semantic-version -DskipTests=true #跳过测试，但编译测试代码 -q控制日志级别
+    env: CHECK_SEMANTIC_VERSION=true
+
+branches:
+  only:
+  - master
