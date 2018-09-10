@@ -11,9 +11,10 @@ jobs:
   include:
   - stage: test
     jdk: oraclejdk8
-    script: mvn -q verify -Pcheck-semantic-version -DskipTests=true #跳过测试，但编译测试代码 -q控制日志级别
+    script: mvn -q verify -Pcheck-semantic-version  #跳过测试，但编译测试代码 -q控制日志级别
     env: CHECK_SEMANTIC_VERSION=true
 
 branches:
   only:
   - master
+#-DskipTests=true
