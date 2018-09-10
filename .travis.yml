@@ -26,4 +26,4 @@ after_success:
 
 env:
   global:
-    - secure: "GqXpmwj9t0aXKSJVZNof8YYfgNLjUtToEcjni"
+    - secure: "flMbUB2pd19JRyW0LUvElf3ISK25aZiPN"
